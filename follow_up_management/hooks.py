@@ -137,13 +137,13 @@ doctype_js = {"Lead" : "public/js/lead.js"}
 scheduler_events = {
     
     "check_followup_status":{
-        "* * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.check_followup_status"]
+        "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.check_followup_status"]
     },
     "followup_reminder":{
-        "* * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.reminder"]
+        "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.reminder"]
     },
     "followup_reminder":{
-        "* * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.email_reminder"]
+        "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.email_reminder"]
     },
     
 # 	"all": [
