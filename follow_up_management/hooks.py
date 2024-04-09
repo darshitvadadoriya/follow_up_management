@@ -28,6 +28,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
+doctype_js = {"Lead" : "public/js/lead.js"}
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -133,7 +134,18 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
+    
+    "check_followup_status":{
+        "* * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.check_followup_status"]
+    },
+    "followup_reminder":{
+        "* * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.reminder"]
+    },
+    "followup_reminder":{
+        "* * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.email_reminder"]
+    },
+    
 # 	"all": [
 # 		"follow_up_management.tasks.all"
 # 	],
@@ -149,7 +161,7 @@ app_license = "mit"
 # 	"monthly": [
 # 		"follow_up_management.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------

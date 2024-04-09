@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-04-09 14:30:00.076693",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "follow_up_from",
+  "lead",
+  "followup_by",
+  "user_name",
+  "column_break_ywqj",
+  "priority",
+  "status",
+  "communication_type",
+  "follow_up_datetime",
+  "sent_reminder",
+  "section_break_jjuu",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "FOLLOW-UP-.YYYY.-"
+  },
+  {
+   "fieldname": "follow_up_from",
+   "fieldtype": "Select",
+   "label": "Follow Up From",
+   "options": "\nLead"
+  },
+  {
+   "depends_on": "eval:doc.follow_up_from == \"Lead\"",
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "mandatory_depends_on": "eval:doc.followup_from == \"Lead\"",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "followup_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Follow Up By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "followup_by.full_name",
+   "fieldname": "user_name",
+   "fieldtype": "Data",
+   "label": "User Name"
+  },
+  {
+   "fieldname": "column_break_ywqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Cold\nWarm\nHot"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Upcoming\nCompleted\nMissed\nPending\nCancelled"
+  },
+  {
+   "fieldname": "communication_type",
+   "fieldtype": "Select",
+   "label": "Communication Type",
+   "options": "\nCall\nEmail\nSMS\nWhatsApp"
+  },
+  {
+   "fieldname": "follow_up_datetime",
+   "fieldtype": "Datetime",
+   "label": "Follow Up Datetime",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sent_reminder",
+   "fieldtype": "Check",
+   "label": "Sent Reminder",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_jjuu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-09 14:51:33.252068",
+ "modified_by": "Administrator",
+ "module": "Follow Up Management",
+ "name": "Follow Up",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
