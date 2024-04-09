@@ -42,7 +42,7 @@ frappe.ui.form.on("Lead", {
                 label: "Communication type",
                 fieldname: "communication_type",
                 fieldtype: "Select",
-                options: "Call\nEmail\nSMS\nWhatsApp",
+                options: "Call\nEmail\nSMS\nWhatsApp\nVisit",
                 reqd: 1,
               },
           
