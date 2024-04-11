@@ -142,9 +142,7 @@ scheduler_events = {
     "followup_reminder":{
         "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.reminder"]
     },
-    "followup_email_reminder":{
-        "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.email_reminder"]
-    },
+    
     
 # 	"all": [
 # 		"follow_up_management.tasks.all"

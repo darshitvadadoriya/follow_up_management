@@ -84,7 +84,7 @@ def reminder():
 		filters={"status": "Upcoming","sent_reminder":0}, 
 		fields=["name", "follow_up_datetime","followup_by"]
 	)
-    
+    def_email = frappe.get_list("Email Account",filters={'default_outgoing':1})
     for doc in docs:
         follow_up_datetime = doc.get("follow_up_datetime")
 
@@ -111,50 +111,22 @@ def reminder():
             doc.type = "Alert"
             doc.insert(ignore_permissions=True)
             
+            
+            
+            if len(def_email) != 0:
+                
+                frappe.sendmail(
+					recipients=user,
+					subject = "Followup Reminder",
+					message="""
+								<h3>Followup Reminder <a href={}>{}</a></h3>
+							
+						""".format(base_url,follow_up)
+            	)
+                
             frappe.db.set_value("Follow Up",follow_up,"sent_reminder",1)
-
-        
-	
             
             
     frappe.db.commit()
         
-    
-    
-# send email reminder before 1 hours
-@frappe.whitelist()
-def email_reminder():
-    # Fetch all upcoming follow-ups
-    docs = frappe.get_all(
-		"Follow Up", 
-		filters={"status": "Upcoming","sent_reminder":0}, 
-		fields=["name", "follow_up_datetime","followup_by"]
-	)
-    
-    for doc in docs:
-        follow_up_datetime = doc.get("follow_up_datetime")
-
-        visit_datetime = datetime.strptime(f"{follow_up_datetime}", "%Y-%m-%d %H:%M:%S")
-        
-        # Get current datetime
-        current_datetime = datetime.now()
-        
-        time_diff = visit_datetime - timedelta(hours=0, minutes=30)
-        if time_diff <= current_datetime:
-             
-            follow_up = doc.get("name")
-            user = doc.get("followup_by")
-            
-            base_url = get_url()+"/app/follow-up/"+follow_up
-            
-            frappe.sendmail(
-                recipients=user,
-                 subject = "Followup Reminder",
-                 message="""
-                            <h3>Followup Reminder <a href={}>{}</a></h3>
-                          
-                    """.format(base_url,follow_up)
-            )
-            
- 
     
