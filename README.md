@@ -49,6 +49,7 @@ Follow-up management entails using ERPNext CRM to initiate follow-ups through le
 ![reminder](https://github.com/darshitvadadoriya/follow_up_management/assets/132453297/414cdda0-7465-46ca-9bd2-ef873c8efd85)
 
 - Users receive reminders via system notifications and emails 30 minutes before the scheduled follow-up date and time.
+- Automatically change status Upcoming to Pending if follow-up taken is missed date-time is missed.
 
 
 
