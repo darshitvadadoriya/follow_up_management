@@ -1,9 +1,9 @@
 
 # Follow-up Management
-Follow-up management entails using ERPNext CRM to initiate follow-ups through leads.
+The follow-up management feature enables users to handle follow-ups from leads with a user-friendly interface.
 
 ## Description
-This application is utilized for managing follow-ups within ERPNext.Enhance your perspective from lead to managing follow-ups with a better view. A singular interface for adding, deleting, and updating follow-ups.In this application, users will receive notifications via system alerts and email up to 30 minutes before the scheduled follow-up time. Additionally, it automatically updates the status if a follow-up is not conducted according to the scheduled time.
+This application is utilized for managing follow-ups within ERPNext. Enhance your perspective from lead to managing follow-ups with a better view. A singular interface for adding, deleting, and updating follow-ups.In this application, users will receive notifications via system alerts and email up to 30 minutes before the scheduled follow-up time. Additionally, it automatically updates the status if a follow-up is not conducted according to the scheduled time.
 
 
 ## Installation
@@ -21,9 +21,11 @@ This application is utilized for managing follow-ups within ERPNext.Enhance your
 2. Setup default email account
 
 ## Key Features
-1. Manage follow-up
-2. Email and system notifications are set for a reminder 30 minutes before the scheduled time.
-3. Automatically update status.
+1. Manage follow-up.
+2. Enhance User Interface.
+3. Directly accessible from the lead.
+4. Email and system notifications are set for a reminder 30 minutes before the scheduled time.
+5. Automatically update status.
 
 ## Setup
 **Step-1:**
