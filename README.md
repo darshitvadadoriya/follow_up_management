@@ -16,6 +16,9 @@ Follow-up management entails using ERPNext CRM to initiate follow-ups through le
 1. Install ERPNext
 2. Setup default email account
 
+## Keyfeatures
+1. Manage follow-up
+2. Reminder 30 minutes before time email and system notification.
 
 ## Setup
 **Step-1:**
