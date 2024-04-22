@@ -2,17 +2,14 @@
 # Follow-up Management
 The follow-up management feature enables users to handle follow-ups from leads with a user-friendly interface.
 
+
 ## Description
 This application is utilized for managing follow-ups within ERPNext. Enhance your perspective from lead to managing follow-ups with a better view. A singular interface for adding, deleting, and updating follow-ups.In this application, users will receive notifications via system alerts and email up to 30 minutes before the scheduled follow-up time. Additionally, it automatically updates the status if a follow-up is not conducted according to the scheduled time.
 
 
 ## Installation
-1. Get app:
   ```sh
   bench get-app https://github.com/darshitvadadoriya/follow_up_management.git
-  ```
-2. Install app in site:
-  ```sh
   bench --site sitename install-app follow_up_management
   ```
 
@@ -20,12 +17,19 @@ This application is utilized for managing follow-ups within ERPNext. Enhance you
 1. Install ERPNext
 2. Setup default email account
 
+
 ## Key Features
 1. Manage follow-up.
 2. Enhance User Interface.
 3. Directly accessible from the lead.
 4. Email and system notifications are set for a reminder 30 minutes before the scheduled time.
 5. Automatically update status.
+6. Easy to customize.
+
+
+## Customizations
+- We can customize the Follow-up app for any DocType to have all of the features.
+
 
 ## Setup
 **Step-1:**
