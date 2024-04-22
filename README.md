@@ -10,7 +10,7 @@ This application is utilized for managing follow-ups within ERPNext. Enhance you
 ## Installation
   ```sh
   bench get-app https://github.com/darshitvadadoriya/follow_up_management.git
-  bench --site sitename install-app follow_up_management
+  bench --site site-name install-app follow_up_management
   ```
 
 ## Pre-requisites
