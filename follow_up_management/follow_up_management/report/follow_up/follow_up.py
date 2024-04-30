@@ -32,7 +32,7 @@ def execute(filters=None):
             "width": "220",
         },
         # {
-        #     "fieldname": "user_name",
+        #     "fieldname": "follow_up_by_name",
         #     "label": "Name",
         #     "fieldtype": "Link",
         #     "options": "Lead",
@@ -66,7 +66,7 @@ def execute(filters=None):
             "width": "200",
         },
         {
-            "fieldname": "user_name",
+            "fieldname": "follow_up_by_name",
             "label": "Name",
             "fieldtype": "Link",
             "options": "Lead",
@@ -227,7 +227,7 @@ def execute(filters=None):
             "name",
             "source_doctype",
             "source",
-            "user_name",
+            "follow_up_by_name",
             "status",
             "priority",
             "follow_up_datetime",
