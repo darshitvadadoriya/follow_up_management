@@ -50,7 +50,7 @@
   "docstatus": 0,
   "doctype": "Kanban Board",
   "field_name": "status",
-  "fields": "[\"followup_by\",\"modified_by\",\"status\",\"creation\"]",
+  "fields": "[\"follow_up_by\",\"modified_by\",\"status\",\"creation\"]",
   "filters": null,
   "kanban_board_name": "Follow Up",
   "modified": "2024-04-29 00:17:13.109960",
