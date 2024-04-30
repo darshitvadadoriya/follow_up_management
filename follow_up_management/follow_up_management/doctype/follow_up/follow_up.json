@@ -8,8 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "follow_up_from",
-  "lead",
+  "source_doctype",
+  "source",
   "followup_by",
   "user_name",
   "column_break_ywqj",
@@ -28,20 +28,6 @@
    "hidden": 1,
    "label": "Series",
    "options": "FOLLOW-UP-.YYYY.-"
-  },
-  {
-   "fieldname": "follow_up_from",
-   "fieldtype": "Select",
-   "label": "Follow Up From",
-   "options": "\nLead"
-  },
-  {
-   "depends_on": "eval:doc.follow_up_from == \"Lead\"",
-   "fieldname": "lead",
-   "fieldtype": "Link",
-   "label": "Lead",
-   "mandatory_depends_on": "eval:doc.followup_from == \"Lead\"",
-   "options": "Lead"
   },
   {
    "fieldname": "followup_by",
@@ -65,19 +51,22 @@
    "fieldname": "priority",
    "fieldtype": "Select",
    "label": "Priority",
-   "options": "Cold\nWarm\nHot"
+   "options": "Cold\nWarm\nHot",
+   "reqd": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Upcoming\nCompleted\nMissed\nPending\nCancelled"
+   "options": "Upcoming\nCompleted\nMissed\nPending\nCancelled",
+   "reqd": 1
   },
   {
    "fieldname": "communication_type",
    "fieldtype": "Select",
    "label": "Communication Type",
-   "options": "\nCall\nEmail\nSMS\nWhatsApp\nVisit"
+   "options": "\nCall\nEmail\nSMS\nWhatsApp\nVisit",
+   "reqd": 1
   },
   {
    "fieldname": "follow_up_datetime",
@@ -100,11 +89,25 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "source_doctype",
+   "fieldtype": "Select",
+   "label": "Source DocType",
+   "options": "\nLead",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "label": "Source",
+   "options": "Lead",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-09 17:04:40.226990",
+ "modified": "2024-04-29 03:27:54.015397",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",

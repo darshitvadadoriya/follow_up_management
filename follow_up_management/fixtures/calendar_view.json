@@ -1,0 +1,13 @@
+[
+ {
+  "all_day": 1,
+  "docstatus": 0,
+  "doctype": "Calendar View",
+  "end_date_field": "follow_up_datetime",
+  "modified": "2024-04-29 00:11:21.195455",
+  "name": "Follow Up",
+  "reference_doctype": "Follow Up",
+  "start_date_field": "follow_up_datetime",
+  "subject_field": "status"
+ }
+]

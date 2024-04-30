@@ -28,7 +28,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Lead" : "public/js/lead.js"}
+doctype_js = {"Lead": "public/js/lead.js"}
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -135,30 +135,31 @@ doctype_js = {"Lead" : "public/js/lead.js"}
 # ---------------
 
 scheduler_events = {
-    
-    "check_followup_status":{
-        "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.check_followup_status"]
+    "check_followup_status": {
+        "*/5 * * * *": [
+            "follow_up_management.follow_up_management.doctype.follow_up.follow_up.check_followup_status"
+        ]
     },
-    "followup_reminder":{
-        "*/5 * * * *":["follow_up_management.follow_up_management.doctype.follow_up.follow_up.reminder"]
+    "followup_reminder": {
+        "*/5 * * * *": [
+            "follow_up_management.follow_up_management.doctype.follow_up.follow_up.reminder"
+        ]
     },
-    
-    
-# 	"all": [
-# 		"follow_up_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"follow_up_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"follow_up_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"follow_up_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"follow_up_management.tasks.monthly"
-# 	],
+    # 	"all": [
+    # 		"follow_up_management.tasks.all"
+    # 	],
+    # 	"daily": [
+    # 		"follow_up_management.tasks.daily"
+    # 	],
+    # 	"hourly": [
+    # 		"follow_up_management.tasks.hourly"
+    # 	],
+    # 	"weekly": [
+    # 		"follow_up_management.tasks.weekly"
+    # 	],
+    # 	"monthly": [
+    # 		"follow_up_management.tasks.monthly"
+    # 	],
 }
 
 # Testing
@@ -237,3 +238,30 @@ scheduler_events = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# FIXTURES
+fixtures = [
+    {
+        "dt": "Kanban Board",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Follow Up",
+                ],
+            ]
+        ],
+    },
+    {
+        "dt": "Calendar View",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Follow Up",
+                ],
+            ]
+        ],
+    },
+]
