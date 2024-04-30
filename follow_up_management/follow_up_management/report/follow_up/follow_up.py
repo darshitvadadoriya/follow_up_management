@@ -27,8 +27,8 @@ def execute(filters=None):
         {
             "fieldname": "source",
             "label": "Source",
-            "fieldtype": "Link",
-            "options": "Lead",
+            "fieldtype": "Dynamic Link",
+            "options": "source_doctype",
             "width": "220",
         },
         # {
@@ -62,15 +62,8 @@ def execute(filters=None):
             "fieldname": "follow_up_by",
             "label": "Follow Up By",
             "fieldtype": "Link",
-            "options": "User",
+            "options": "Sales Person",
             "width": "200",
-        },
-        {
-            "fieldname": "follow_up_by_name",
-            "label": "Name",
-            "fieldtype": "Link",
-            "options": "Lead",
-            "width": "160",
         },
         {
             "fieldname": "communication_type",
@@ -227,7 +220,6 @@ def execute(filters=None):
             "name",
             "source_doctype",
             "source",
-            "follow_up_by_name",
             "status",
             "priority",
             "follow_up_datetime",
@@ -237,6 +229,7 @@ def execute(filters=None):
     )
 
     for item in data:
+
         color = "white"
         if item["status"] == "Upcoming":
             color = "#1e87ff"

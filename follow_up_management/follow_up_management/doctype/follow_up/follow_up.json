@@ -11,7 +11,6 @@
   "source_doctype",
   "source",
   "follow_up_by",
-  "follow_up_by_name",
   "column_break_ywqj",
   "priority",
   "status",
@@ -84,16 +83,16 @@
    "fieldname": "source_doctype",
    "fieldtype": "Select",
    "label": "Source DocType",
-   "options": "\nLead",
+   "options": "\nLead\nQuotation",
    "reqd": 1
   },
   {
    "fieldname": "source",
-   "fieldtype": "Link",
+   "fieldtype": "Dynamic Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Source",
-   "options": "Lead",
+   "options": "source_doctype",
    "reqd": 1
   },
   {
@@ -102,19 +101,12 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Follow Up By",
-   "options": "User"
-  },
-  {
-   "fetch_from": "follow_up_by.full_name",
-   "fieldname": "follow_up_by_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Follow Up By Name"
+   "options": "Sales Person"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-30 00:48:57.409515",
+ "modified": "2024-04-30 05:16:29.640169",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",

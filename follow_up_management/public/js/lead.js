@@ -5,7 +5,7 @@ frappe.ui.form.on("Lead", {
   },
   custom_create_follow_up(frm) {
     let create_follow_up_dialog = new frappe.ui.Dialog({
-      title: "Create Follow-up",
+      title: "Create Follow Up",
       fields: [
         {
           label: "Follow up Datetime",
@@ -17,7 +17,7 @@ frappe.ui.form.on("Lead", {
           label: "Follow Up By",
           fieldname: "follow_up_by",
           fieldtype: "Link",
-          options: "User",
+          options: "Sales Person",
         },
         {
           label: "Status",
@@ -98,7 +98,7 @@ frappe.ui.form.on("Lead", {
       },
       callback: function (res) {
         var data = res.message;
-        console.log(data);
+        // console.log(data);
         if (data) {
           var custom_followup_details = `<style>
                                           .grid {
@@ -123,7 +123,7 @@ frappe.ui.form.on("Lead", {
                                           </style>`;
           data.forEach((data) => {
             custom_followup_details += `<div class="card-view" style="min-width: 200px;box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);padding: 20px;border-radius: 15px;font-size: 16px;">
-                                            <p class="uniqueId"> Name: ${data.name}</p>
+                                            <p> Name:<span class="uniqueId">${data.name}</span></p>
                                             <p>Status:<span class="text-danger">${data.status}</span></p>
                                             <p>Priority: ${data.priority}</p>
                                             <p>Date: ${data.follow_up_datetime}</p>
@@ -159,33 +159,28 @@ frappe.ui.form.on("Lead", {
         var deleteButton = data.querySelector(".delete-btn");
         var uniqueId = data.querySelector(".uniqueId").innerHTML;
 
+        // console.log(uniqueId);
+
         // for delete button
         deleteButton.addEventListener("click", () => {
           frappe.confirm(
             "Are you sure you want to proceed?",
             () => {
-              // console.log(uniqueId);
               frappe.call({
-                method:
-                  "follow_up_management.follow_up_management.doctype.follow_up.follow_up.delete_follow_up_lead",
+                method: "frappe.client.delete",
                 args: {
-                  docname: uniqueId,
+                  doctype: "Follow Up",
+                  name: uniqueId
                 },
-                // freeze: true,
-                // freeze_message: "Deleting Follow Up",
-                callback: function (response) {
-                  if (response.message) {
-                    frappe.show_alert("Follow up Successfully Deleted!");
+                callback: function (res) {
+                  frappe.show_alert("Follow up Successfully Deleted!");
+                  if (frm.is_dirty()) {
+                    frm.save();
+                  } else {
+                    frm.reload_doc();
                   }
-                },
-              });
-              setTimeout(() => {
-                if (frm.is_dirty()) {
-                  frm.save();
-                } else {
-                  frm.reload_doc();
                 }
-              }, 300);
+              })
             },
             () => {
             }

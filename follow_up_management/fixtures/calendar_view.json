@@ -4,10 +4,10 @@
   "docstatus": 0,
   "doctype": "Calendar View",
   "end_date_field": "follow_up_datetime",
-  "modified": "2024-04-29 00:11:21.195455",
+  "modified": "2024-04-30 04:51:11.842295",
   "name": "Follow Up",
   "reference_doctype": "Follow Up",
   "start_date_field": "follow_up_datetime",
-  "subject_field": "status"
+  "subject_field": "follow_up_by"
  }
 ]
