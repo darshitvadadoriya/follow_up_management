@@ -10,8 +10,8 @@
   "naming_series",
   "source_doctype",
   "source",
-  "followup_by",
-  "user_name",
+  "follow_up_by",
+  "follow_up_by_name",
   "column_break_ywqj",
   "priority",
   "status",
@@ -30,26 +30,13 @@
    "options": "FOLLOW-UP-.YYYY.-"
   },
   {
-   "fieldname": "followup_by",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Follow Up By",
-   "options": "User",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "followup_by.full_name",
-   "fieldname": "user_name",
-   "fieldtype": "Data",
-   "label": "User Name"
-  },
-  {
    "fieldname": "column_break_ywqj",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "priority",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Priority",
    "options": "Cold\nWarm\nHot",
    "reqd": 1
@@ -57,6 +44,8 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Upcoming\nCompleted\nMissed\nPending\nCancelled",
    "reqd": 1
@@ -71,6 +60,7 @@
   {
    "fieldname": "follow_up_datetime",
    "fieldtype": "Datetime",
+   "in_list_view": 1,
    "label": "Follow Up Datetime",
    "reqd": 1
   },
@@ -100,14 +90,31 @@
   {
    "fieldname": "source",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Source",
    "options": "Lead",
    "reqd": 1
+  },
+  {
+   "fieldname": "follow_up_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Follow Up By",
+   "options": "User"
+  },
+  {
+   "fetch_from": "follow_up_by.full_name",
+   "fieldname": "follow_up_by_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Follow Up By Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-29 03:27:54.015397",
+ "modified": "2024-04-30 00:48:57.409515",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",

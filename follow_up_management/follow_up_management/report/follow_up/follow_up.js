@@ -42,6 +42,13 @@ frappe.query_reports["Follow Up"] = {
 			"options": "\nCold\nWarm\nHot",
 			"width": "100",
 		},
+		{
+			"fieldname": "follow_up_by",
+			"label": "Follow Up By",
+			"fieldtype": "Link",
+			"options": "User",
+			"width": "100",
+		},
 	],
 	"onload": function (report) {
 		initializeFilters();

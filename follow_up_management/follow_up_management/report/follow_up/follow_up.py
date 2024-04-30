@@ -59,7 +59,7 @@ def execute(filters=None):
             "width": "200",
         },
         {
-            "fieldname": "followup_by",
+            "fieldname": "follow_up_by",
             "label": "Follow Up By",
             "fieldtype": "Link",
             "options": "User",
@@ -85,6 +85,10 @@ def execute(filters=None):
     conditions = {}
 
     # DEFINE FILTERS
+    follow_up_by_filter = filters.get("follow_up_by")
+    if follow_up_by_filter:
+        conditions["follow_up_by"] = follow_up_by_filter
+
     source_filter = filters.get("source_doctype")
     if source_filter:
         conditions["source_doctype"] = source_filter
@@ -227,7 +231,7 @@ def execute(filters=None):
             "status",
             "priority",
             "follow_up_datetime",
-            "followup_by",
+            "follow_up_by",
             "communication_type",
         ],
     )
