@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta,date
 from frappe.utils import getdate
 import calendar
 from dateutil.relativedelta import relativedelta
@@ -73,6 +73,11 @@ def execute(filters=None):
             "width": "180",
         },
     ]
+
+    today = date.today()
+
+    start_of_year = today.replace(month=1, day=1)
+    end_of_year = today.replace(month=12, day=31)
 
     # DEFINE CONDITIONS
     conditions = {}
@@ -146,20 +151,20 @@ def execute(filters=None):
         # adding the query filter to the condition dict
         conditions["follow_up_datetime"] = ["between", [from_date, to_date]]
 
-    # DATE RANGE
-    date_range = filters.get("date_range")
-    if date_range:
+  # FOR DATE RANGE FILTER
+    filter = filters.get("filter")
+    if filter:
         today = frappe.utils.today()
 
-    if date_range == "Today":
+    if filter == "today_only":
         today = datetime.today().strftime("%Y-%m-%d")
-        conditions["follow_up_datetime"] = ["=", today]
+        conditions["follow_up_datetime"] = ["between", [today,today]]
 
-    elif date_range == "Yesterday":
+    elif filter == "yesterday":
         yesterday = (datetime.today() - timedelta(days=1)).strftime("%Y-%m-%d")
         conditions["follow_up_datetime"] = ["between", [yesterday, yesterday]]
 
-    elif date_range == "This Week":
+    elif filter == "this_week":
         start_of_week = (
             datetime.today() - timedelta(days=datetime.today().weekday())
         ).strftime("%Y-%m-%d")
@@ -170,7 +175,7 @@ def execute(filters=None):
             [start_of_week.strftime("%Y-%m-%d"), end_of_week],
         ]
 
-    elif date_range == "Last Week":
+    elif filter == "last_week":
         end_of_last_week = datetime.today() - timedelta(days=datetime.today().weekday())
         start_of_last_week = end_of_last_week - timedelta(days=6)
         conditions["follow_up_datetime"] = [
@@ -181,25 +186,29 @@ def execute(filters=None):
             ],
         ]
 
-    elif date_range == "Last 15 Days":
+    elif filter == "last_15_days":
         last_15_days = (datetime.today() - timedelta(days=15)).strftime("%Y-%m-%d")
         conditions["follow_up_datetime"] = [
             "between",
             [last_15_days, datetime.today().strftime("%Y-%m-%d")],
         ]
 
-    elif date_range == "This Month":
-        start_of_month = datetime.today().replace(day=1)
-        _, last_day_of_month = calendar.monthrange(
-            start_of_month.year, start_of_month.month
-        )
-        end_of_month = start_of_month.replace(day=last_day_of_month)
-        filters["date_of_visit"] = [
+    elif filter == "this_month":
+        today = datetime.today()  # Get today's date
+        start_of_month = today.replace(day=1)  # First day of the current month
+        end_of_month = start_of_month.replace(day=calendar.monthrange(today.year, today.month)[1])  # Last day of the current month
+
+        # Print for debugging
+        # print("Today:", today)
+        # print("Start of Month:", start_of_month)
+        # print("End of Month:", end_of_month)
+
+        conditions["follow_up_datetime"] = [
             "between",
             [start_of_month.strftime("%Y-%m-%d"), end_of_month.strftime("%Y-%m-%d")],
+            
         ]
-
-    elif date_range == "Last Month":
+    elif filter == "last_month":
         first_day_of_current_month = datetime.today().replace(day=1)
         last_day_of_last_month = first_day_of_current_month - timedelta(days=1)
         start_of_last_month = last_day_of_last_month.replace(day=1).strftime("%Y-%m-%d")
@@ -209,9 +218,11 @@ def execute(filters=None):
             [start_of_last_month, end_of_last_month],
         ]
 
-    elif date_range == "This Year":
+    elif filter == "this_year":
         start_of_year = datetime.today().replace(month=1, day=1).strftime("%Y-%m-%d")
         conditions["follow_up_datetime"] = [">=", start_of_year]
+
+  
 
     data = frappe.db.get_list(
         "Follow Up",
