@@ -75,17 +75,20 @@ def check_followup_status():
     
     
     
-# send reminder before 1 hours
+# send reminder before 30 minutes.
 @frappe.whitelist()
 def reminder():
+  
     # Fetch all upcoming follow-ups
     docs = frappe.get_all(
 		"Follow Up", 
 		filters={"status": "Upcoming","sent_reminder":0}, 
-		fields=["name", "follow_up_datetime","followup_by"]
+		fields=["name", "follow_up_datetime","follow_up_by"]
 	)
+   
     def_email = frappe.get_list("Email Account",filters={'default_outgoing':1})
     for doc in docs:
+        
         follow_up_datetime = doc.get("follow_up_datetime")
 
         visit_datetime = datetime.strptime(f"{follow_up_datetime}", "%Y-%m-%d %H:%M:%S")
@@ -98,14 +101,29 @@ def reminder():
            
             
             follow_up = doc.get("name")
-            user = doc.get("followup_by")
+            sales_person = doc.get("follow_up_by")
+            employee = ""
+            user_id = ""
+            user_email = ""
+            
+            # Get sales person email id
+            if sales_person:
+                employee = frappe.get_value("Sales Person", sales_person, "employee")
+    
+            if employee:
+                user_id = frappe.get_value("Employee", employee, "user_id")
+        
+            if user_id:
+                user_email = frappe.get_value("User", user_id, "email")
+        
+            # user = doc.get("followup_by")
             
             base_url = get_url()+"/app/follow-up/"+follow_up
             
             doc = frappe.new_doc("Notification Log")
             doc.document_name = follow_up
             doc.document_type = "Follow Up"
-            doc.for_user = user
+            doc.for_user = user_email
             doc.subject = "Followup Reminder"
             doc.email_content = "Schedule Followup for this time"
             doc.type = "Alert"
@@ -116,15 +134,15 @@ def reminder():
             if len(def_email) != 0:
                 
                 frappe.sendmail(
-					recipients=user,
+					recipients=user_email,
 					subject = "Followup Reminder",
 					message="""
 								<h3>Followup Reminder <a href={}>{}</a></h3>
 							
 						""".format(base_url,follow_up)
             	)
-                
-            frappe.db.set_value("Follow Up",follow_up,"sent_reminder",1)
+            if user_id:    
+                frappe.db.set_value("Follow Up",follow_up,"sent_reminder",1)
             
             
     frappe.db.commit()
