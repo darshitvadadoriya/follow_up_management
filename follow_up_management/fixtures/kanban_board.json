@@ -4,7 +4,7 @@
    {
     "column_name": "Upcoming",
     "indicator": "Gray",
-    "order": "[\n \"FOLLOW-UP-2024-00003\"\n]",
+    "order": "[]",
     "parent": "Follow Up",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -13,7 +13,7 @@
    {
     "column_name": "Completed",
     "indicator": "Gray",
-    "order": "[]",
+    "order": "[\"FOLLOW-UP-2024-00015\"]",
     "parent": "Follow Up",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -31,7 +31,7 @@
    {
     "column_name": "Pending",
     "indicator": "Gray",
-    "order": "[\"FOLLOW-UP-2024-00014\"]",
+    "order": "[\"FOLLOW-UP-2024-00017\", \"FOLLOW-UP-2024-00003\", \"FOLLOW-UP-2024-00016\", \"FOLLOW-UP-2024-00014\"]",
     "parent": "Follow Up",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -53,7 +53,7 @@
   "fields": "[\"follow_up_by\", \"modified_by\", \"status\", \"creation\"]",
   "filters": null,
   "kanban_board_name": "Follow Up",
-  "modified": "2024-04-30 05:02:10.069738",
+  "modified": "2024-05-03 04:57:18.589008",
   "name": "Follow Up",
   "private": 0,
   "reference_doctype": "Follow Up",
