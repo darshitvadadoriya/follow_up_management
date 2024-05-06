@@ -67,8 +67,7 @@
    "default": "0",
    "fieldname": "sent_reminder",
    "fieldtype": "Check",
-   "label": "Sent Reminder",
-   "read_only": 1
+   "label": "Sent Reminder"
   },
   {
    "fieldname": "section_break_jjuu",

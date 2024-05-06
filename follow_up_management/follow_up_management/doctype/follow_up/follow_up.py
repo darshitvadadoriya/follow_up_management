@@ -83,7 +83,7 @@ def reminder():
     docs = frappe.get_all(
 		"Follow Up", 
 		filters={"status": "Upcoming","sent_reminder":0}, 
-		fields=["name", "follow_up_datetime","follow_up_by"]
+		fields=["name", "follow_up_datetime","follow_up_by","source_doctype","communication_type","follow_up_datetime"]
 	)
    
     def_email = frappe.get_list("Email Account",filters={'default_outgoing':1})
@@ -102,6 +102,11 @@ def reminder():
             
             follow_up = doc.get("name")
             sales_person = doc.get("follow_up_by")
+            source_doctype = doc.get("source_doctype")
+            communication_type = doc.get("communication_type")
+            follow_up_datetime = doc.get("follow_up_datetime")
+            date = follow_up_datetime.strftime("%d %m %Y")
+            time = follow_up_datetime.strftime("%I:%M %p")
             employee = ""
             user_id = ""
             user_email = ""
@@ -124,7 +129,7 @@ def reminder():
             doc.document_name = follow_up
             doc.document_type = "Follow Up"
             doc.for_user = user_email
-            doc.subject = "Followup Reminder"
+            doc.subject = "Followup Reminder for "+follow_up
             doc.email_content = "Schedule Followup for this time"
             doc.type = "Alert"
             doc.insert(ignore_permissions=True)
@@ -137,9 +142,11 @@ def reminder():
 					recipients=user_email,
 					subject = "Followup Reminder",
 					message="""
-								<h3>Followup Reminder <a href={}>{}</a></h3>
+                            <h3 style="color:#111111;">Hello {},<h3>
+                            <p style="color:#111111;">This is a reminder for the upcoming followup for {},</p>
+                            <p style="color:#111111;">{} on Date: {} and Time: {} for <a href={}>{}</a></p> 
 							
-						""".format(base_url,follow_up)
+						""".format(sales_person,source_doctype,communication_type,date,time,base_url,follow_up)
             	)
             if user_id:    
                 frappe.db.set_value("Follow Up",follow_up,"sent_reminder",1)
