@@ -67,8 +67,7 @@
    "default": "0",
    "fieldname": "sent_reminder",
    "fieldtype": "Check",
-   "label": "Sent Reminder",
-   "read_only": 1
+   "label": "Sent Reminder"
   },
   {
    "fieldname": "section_break_jjuu",
@@ -105,8 +104,9 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-05-05 20:34:22.412475",
+ "modified": "2024-05-06 16:53:18.525537",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",
