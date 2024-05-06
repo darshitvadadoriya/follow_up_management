@@ -16,5 +16,5 @@ frappe.views.calendar["Follow Up"] = {
             options: "Sales Person",
         },
     ],
-    get_events_method: "frappe.desk.calendar.get_events",
+    get_events_method: "frappe.desk.calendar.get_events",cleqr
 };
