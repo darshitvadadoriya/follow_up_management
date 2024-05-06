@@ -106,7 +106,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-30 05:16:29.640169",
+ "modified": "2024-05-05 20:34:22.412475",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",
@@ -126,7 +126,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "source"
 }
