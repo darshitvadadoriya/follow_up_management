@@ -129,7 +129,7 @@ def reminder():
             doc.document_name = follow_up
             doc.document_type = "Follow Up"
             doc.for_user = user_email
-            doc.subject = "Followup Reminder"
+            doc.subject = "Followup Reminder for "+follow_up
             doc.email_content = "Schedule Followup for this time"
             doc.type = "Alert"
             doc.insert(ignore_permissions=True)
