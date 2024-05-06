@@ -105,8 +105,9 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-05-05 20:34:22.412475",
+ "modified": "2024-05-05 22:15:09.446713",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",
