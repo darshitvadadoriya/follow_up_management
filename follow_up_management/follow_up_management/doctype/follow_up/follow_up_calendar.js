@@ -5,7 +5,7 @@ frappe.views.calendar["Follow Up"] = {
         id: "id",
         title: "follow_up_by",
         allDay: 0,
-        progress: "progress",
+        progress: 50,
     },
     gantt: true,
     filters: [
