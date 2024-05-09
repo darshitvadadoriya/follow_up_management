@@ -11,11 +11,13 @@
   "source_doctype",
   "source",
   "follow_up_by",
+  "color",
   "column_break_ywqj",
   "priority",
   "status",
   "communication_type",
   "follow_up_datetime",
+  "follow_up_end_datetime",
   "sent_reminder",
   "section_break_jjuu",
   "remarks"
@@ -101,12 +103,24 @@
    "in_standard_filter": 1,
    "label": "Follow Up By",
    "options": "Sales Person"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "in_list_view": 1,
+   "label": "Color"
+  },
+  {
+   "fieldname": "follow_up_end_datetime",
+   "fieldtype": "Datetime",
+   "label": "Follow Up End Datetime",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-05-05 22:15:09.446713",
+ "modified": "2024-05-09 13:21:43.482906",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",
