@@ -8,46 +8,74 @@ frappe.ui.form.on("Quotation", {
             title: "Create Follow Up",
             fields: [
                 {
-                    label: "Follow up Datetime",
-                    fieldname: "follow_up_datetime",
-                    fieldtype: "Datetime",
-                    reqd: 1,
+                  label: "Follow Up Datetime",
+                  fieldname: "follow_up_datetime",
+                  fieldtype: "Datetime",
+                  reqd: 1,
+                  onchange: function(e) {
+                    var currentDatetime = this.value
+            
+                    // convert str to date obj
+                    var datetimeObject = frappe.datetime.str_to_obj(currentDatetime);
+                    
+                    // Add 30 minutes to the datetime
+                    datetimeObject.setMinutes(datetimeObject.getMinutes() + 30);
+                    
+                    // Format the new datetime as a string with date and time
+                    var diff_datetime = frappe.datetime.get_datetime_as_string(datetimeObject);
+                    cur_dialog.set_value("follow_up_end_datetime",diff_datetime)
+                  }
                 },
                 {
-                    label: "Follow Up By",
-                    fieldname: "follow_up_by",
-                    fieldtype: "Link",
-                    options: "Sales Person",
+                  label: "Follow Up End Datetime",
+                  fieldname: "follow_up_end_datetime",
+                  fieldtype: "Datetime",
+                  read_only:1,
+                  default:frappe.datetime.now_datetime()
+                },
+                
+                {
+                  label: "Follow Up By",
+                  fieldname: "follow_up_by",
+                  fieldtype: "Link",
+                  options: "Sales Person",
                 },
                 {
-                    label: "Status",
-                    fieldname: "status",
-                    fieldtype: "Select",
-                    options: "Upcoming\nCompleted\nCancelled\nPending",
-                    default: "Upcoming",
-                    reqd: 1,
+                  label: "Status",
+                  fieldname: "status",
+                  fieldtype: "Select",
+                  options: "Upcoming\nCompleted\nCancelled\nPending",
+                  default: "Upcoming",
+                  reqd: 1,
                 },
                 {
-                    label: "Priority",
-                    fieldname: "priority",
-                    fieldtype: "Select",
-                    options: "Hot\nWarm\nCold",
-                    reqd: 1,
+                  label: "Priority",
+                  fieldname: "priority",
+                  fieldtype: "Select",
+                  options: "Hot\nWarm\nCold",
+                  reqd: 1,
                 },
                 {
-                    label: "Communication Type",
-                    fieldname: "communication_type",
-                    fieldtype: "Select",
-                    options: "Call\nEmail\nSMS\nWhatsApp\nVisit",
-                    reqd: 1,
+                  label: "Communication Type",
+                  fieldname: "communication_type",
+                  fieldtype: "Select",
+                  options: "Call\nEmail\nSMS\nWhatsApp\nVisit",
+                  reqd: 1,
                 },
                 {
-                    label: "Remarks",
-                    fieldname: "remarks",
-                    fieldtype: "Small Text",
-                    reqd: 0,
+                  label: "Color",
+                  fieldname: "color",
+                  fieldtype: "Color",
+                  reqd: 0,
+                  description:"set color for calender and gantt view"
                 },
-            ],
+                {
+                  label: "Remarks",
+                  fieldname: "remarks",
+                  fieldtype: "Small Text",
+                  reqd: 0,
+                },
+              ],
             primary_action_label: "Submit",
             primary_action(values) {
                 frappe.call({
@@ -63,6 +91,7 @@ frappe.ui.form.on("Quotation", {
                             status: values.status,
                             priority: values.priority,
                             communication_type: values.communication_type,
+                            color:values.color ? values.color:"",
                             remarks: values.remarks ? values.remarks : "",
                         }
                     },

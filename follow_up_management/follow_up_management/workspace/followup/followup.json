@@ -5,7 +5,7 @@
    "label": "Follow Up Date and Time"
   }
  ],
- "content": "[{\"id\":\"TJ-RKsqyVi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Follow Up</span>\",\"col\":12}},{\"id\":\"6bt_9Tpn0m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Upcoming Follow Up\",\"col\":3}},{\"id\":\"A-n2lSF1CT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Upcoming Follow Up\",\"col\":3}},{\"id\":\"YsP1CQFPB2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow Up (Last Month)\",\"col\":3}},{\"id\":\"KufnHpGnLC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow Up (This Week)\",\"col\":3}},{\"id\":\"ESwaV6W5p1\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Follow Up Date and Time\",\"col\":12}},{\"id\":\"Y6hcJ0yOeq\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_eM298inbn\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Follow Up Details</b></span>\",\"col\":12}},{\"id\":\"XFeSvFemqS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"meRhgOyVWn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"DKgVjCFBah\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up\",\"col\":3}},{\"id\":\"KIA2QtoSY2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Calendar\",\"col\":3}},{\"id\":\"YcjMnaHYkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Kanban\",\"col\":3}},{\"id\":\"f_j3lPOh5w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Report\",\"col\":3}},{\"id\":\"bFsKacbnVy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Dashboard\",\"col\":3}}]",
+ "content": "[{\"id\":\"TJ-RKsqyVi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Follow Up</span>\",\"col\":12}},{\"id\":\"6bt_9Tpn0m\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Today Upcoming Follow Up\",\"col\":3}},{\"id\":\"A-n2lSF1CT\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Upcoming Follow Up\",\"col\":3}},{\"id\":\"YsP1CQFPB2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow Up (Last Month)\",\"col\":3}},{\"id\":\"KufnHpGnLC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Follow Up (This Week)\",\"col\":3}},{\"id\":\"ESwaV6W5p1\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Follow Up Date and Time\",\"col\":12}},{\"id\":\"Y6hcJ0yOeq\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"_eM298inbn\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Follow Up Details</b></span>\",\"col\":12}},{\"id\":\"XFeSvFemqS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quotation\",\"col\":3}},{\"id\":\"meRhgOyVWn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"id\":\"DKgVjCFBah\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up\",\"col\":3}},{\"id\":\"KIA2QtoSY2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Calendar\",\"col\":3}},{\"id\":\"9JRmZk4pQj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Gantt\",\"col\":3}},{\"id\":\"YcjMnaHYkc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Kanban\",\"col\":3}},{\"id\":\"f_j3lPOh5w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Report\",\"col\":3}},{\"id\":\"bFsKacbnVy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Follow Up Dashboard\",\"col\":3}}]",
  "creation": "2024-04-29 20:38:45.094633",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "FollowUp",
  "links": [],
- "modified": "2024-04-30 05:36:08.470166",
+ "modified": "2024-05-05 23:05:55.618964",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "FollowUp",
@@ -74,6 +74,13 @@
    "type": "DocType"
   },
   {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Follow Up Calendar",
+   "type": "URL",
+   "url": "/app/follow-up/view/calendar/"
+  },
+  {
    "color": "Blue",
    "doc_view": "List",
    "format": "{} Total",
@@ -90,13 +97,6 @@
    "type": "Report"
   },
   {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Follow Up Calendar",
-   "type": "URL",
-   "url": "/app/follow-up/view/calendar/Follow%20Up"
-  },
-  {
    "color": "Blue",
    "doc_view": "List",
    "format": "{} Open",
@@ -104,6 +104,13 @@
    "link_to": "Lead",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Follow Up Gantt",
+   "type": "URL",
+   "url": "/app/follow-up/view/gantt"
   }
  ],
  "title": "FollowUp"

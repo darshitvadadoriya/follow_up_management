@@ -1,6 +1,7 @@
 # Copyright (c) 2024, Sanskar Technolab and contributors
 # For license information, please see license.txt
 
+
 import frappe
 from datetime import datetime, timedelta
 from frappe.utils import get_url
@@ -8,7 +9,16 @@ from frappe.model.document import Document
 
 
 class FollowUp(Document):
-	pass
+  
+    def validate(self):
+        current_datetime_str = self.follow_up_datetime
+        current_datetime = datetime.strptime(current_datetime_str, "%Y-%m-%d %H:%M:%S")
+
+        # Add 30 minutes
+        diff_datetime = current_datetime + timedelta(minutes=30)
+        self.follow_up_end_datetime = diff_datetime
+     
+
 
 
 
@@ -129,7 +139,7 @@ def reminder():
             doc.document_name = follow_up
             doc.document_type = "Follow Up"
             doc.for_user = user_email
-            doc.subject = "Followup Reminder"
+            doc.subject = "Followup Reminder for "+follow_up
             doc.email_content = "Schedule Followup for this time"
             doc.type = "Alert"
             doc.insert(ignore_permissions=True)
