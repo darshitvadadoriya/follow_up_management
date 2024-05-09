@@ -12,28 +12,7 @@ frappe.ui.form.on("Lead", {
           fieldname: "follow_up_datetime",
           fieldtype: "Datetime",
           reqd: 1,
-          onchange: function(e) {
-            var currentDatetime = this.value
-    
-            // convert str to date obj
-            var datetimeObject = frappe.datetime.str_to_obj(currentDatetime);
-            
-            // Add 30 minutes to the datetime
-            datetimeObject.setMinutes(datetimeObject.getMinutes() + 30);
-            
-            // Format the new datetime as a string with date and time
-            var diff_datetime = frappe.datetime.get_datetime_as_string(datetimeObject);
-            cur_dialog.set_value("follow_up_end_datetime",diff_datetime)
-          }
         },
-        {
-          label: "Follow Up End Datetime",
-          fieldname: "follow_up_end_datetime",
-          fieldtype: "Datetime",
-          read_only:1,
-          default:frappe.datetime.now_datetime()
-        },
-        
         {
           label: "Follow Up By",
           fieldname: "follow_up_by",
@@ -67,7 +46,8 @@ frappe.ui.form.on("Lead", {
           fieldname: "color",
           fieldtype: "Color",
           reqd: 0,
-          description:"set color for calender and gantt view"
+          default: "#449CF0",
+          description: "Set The Color For Calender and Gantt View"
         },
         {
           label: "Remarks",
@@ -91,7 +71,7 @@ frappe.ui.form.on("Lead", {
               status: values.status,
               priority: values.priority,
               communication_type: values.communication_type,
-              color:values.color ? values.color:"",
+              color: values.color ? values.color : "",
               remarks: values.remarks ? values.remarks : "",
             }
           },
