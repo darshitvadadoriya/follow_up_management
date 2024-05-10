@@ -11,7 +11,7 @@ from frappe.model.document import Document
 class FollowUp(Document):
 
     def validate(self):
-        current_datetime_str = self.follow_up_datetime
+        current_datetime_str = str(self.follow_up_datetime)
         current_datetime = datetime.strptime(current_datetime_str, "%Y-%m-%d %H:%M:%S")
 
         # Add 30 minutes
