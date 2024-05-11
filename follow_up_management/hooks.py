@@ -252,16 +252,4 @@ fixtures = [
             ]
         ],
     },
-    {
-        "dt": "Calendar View",
-        "filters": [
-            [
-                "name",
-                "in",
-                [
-                    "Follow Up",
-                ],
-            ]
-        ],
-    },
 ]

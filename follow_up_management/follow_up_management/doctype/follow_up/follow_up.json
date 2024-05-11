@@ -48,7 +48,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
-   "options": "Upcoming\nCompleted\nMissed\nPending\nCancelled",
+   "options": "Upcoming\nCompleted\nPending\nCancelled",
    "reqd": 1
   },
   {
@@ -122,7 +122,7 @@
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "links": [],
- "modified": "2024-05-09 03:28:57.195937",
+ "modified": "2024-05-11 13:45:09.428617",
  "modified_by": "Administrator",
  "module": "Follow Up Management",
  "name": "Follow Up",

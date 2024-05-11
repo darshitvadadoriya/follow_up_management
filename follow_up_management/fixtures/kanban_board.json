@@ -3,26 +3,8 @@
   "columns": [
    {
     "column_name": "Upcoming",
-    "indicator": "Gray",
-    "order": "[\n \"FOLLOW-UP-2024-00014\"\n]",
-    "parent": "Follow Up",
-    "parentfield": "columns",
-    "parenttype": "Kanban Board",
-    "status": "Active"
-   },
-   {
-    "column_name": "Completed",
-    "indicator": "Gray",
-    "order": "[\"FOLLOW-UP-2024-00015\"]",
-    "parent": "Follow Up",
-    "parentfield": "columns",
-    "parenttype": "Kanban Board",
-    "status": "Active"
-   },
-   {
-    "column_name": "Missed",
-    "indicator": "Gray",
-    "order": "[\"FOLLOW-UP-2024-00005\"]",
+    "indicator": "Blue",
+    "order": "[\"FOLLOW-UP-2024-00040\", \"FOLLOW-UP-2024-00032\"]",
     "parent": "Follow Up",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -30,8 +12,17 @@
    },
    {
     "column_name": "Pending",
-    "indicator": "Gray",
-    "order": "[\n \"FOLLOW-UP-2024-00017\",\n \"FOLLOW-UP-2024-00003\",\n \"FOLLOW-UP-2024-00016\"\n]",
+    "indicator": "Orange",
+    "order": "[\"FOLLOW-UP-2024-00029\", \"FOLLOW-UP-2024-00017\", \"FOLLOW-UP-2024-00031\", \"FOLLOW-UP-2024-00028\", \"FOLLOW-UP-2024-00033\", \"FOLLOW-UP-2024-00022\"]",
+    "parent": "Follow Up",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Completed",
+    "indicator": "Green",
+    "order": "[\"FOLLOW-UP-2024-00023\", \"FOLLOW-UP-2024-00034\", \"FOLLOW-UP-2024-00039\", \"FOLLOW-UP-2024-00030\"]",
     "parent": "Follow Up",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -39,8 +30,8 @@
    },
    {
     "column_name": "Cancelled",
-    "indicator": "Gray",
-    "order": "[]",
+    "indicator": "Red",
+    "order": "[\"FOLLOW-UP-2024-00038\", \"FOLLOW-UP-2024-00035\", \"FOLLOW-UP-2024-00036\", \"FOLLOW-UP-2024-00037\"]",
     "parent": "Follow Up",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -50,10 +41,10 @@
   "docstatus": 0,
   "doctype": "Kanban Board",
   "field_name": "status",
-  "fields": "[\"follow_up_by\", \"modified_by\", \"status\", \"creation\"]",
+  "fields": "[\"name\", \"follow_up_datetime\", \"follow_up_by\", \"priority\"]",
   "filters": null,
   "kanban_board_name": "Follow Up",
-  "modified": "2024-05-05 20:34:37.796549",
+  "modified": "2024-05-11 14:03:28.913069",
   "name": "Follow Up",
   "private": 0,
   "reference_doctype": "Follow Up",
