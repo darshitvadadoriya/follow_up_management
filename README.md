@@ -1,10 +1,10 @@
 
 # Follow-up Management
-The follow-up management feature enables users to handle follow-ups from leads with a user-friendly interface.
+The Follow-Up Management App allows you to manage follow-ups from Leads and Quotations through a user-friendly interface and interactive dashboards and reports for analytics purposes.
 
 
 ## Description
-This application is utilized for managing follow-ups within ERPNext. Enhance your perspective from lead to managing follow-ups with a better view. A singular interface for adding, deleting, and updating follow-ups.In this application, users will receive notifications via system alerts and email up to 30 minutes before the scheduled follow-up time. Additionally, it automatically updates the status if a follow-up is not conducted according to the scheduled time.
+Follow-Up Management App for Frappe ERPNext – the ultimate solution for efficient follow-up management. With Lead and Quotation at its core, tracking follow-ups becomes effortless, providing a centralized hub for all your follow-up-related activities within a single screen. The app enables tracking of all follow-ups, organizing them based on status and priority, offering reminder functionality, and furnishing Detailed Reports, a Kanban Board, a Calendar View, a Dashboard, and a Dedicated Workspace.
 
 
 ## Installation
@@ -15,29 +15,30 @@ This application is utilized for managing follow-ups within ERPNext. Enhance you
 
 ## Pre-requisites
 1. Install ERPNext
-2. Setup default email account
+2. Setup Default Email Account
 
 
 ## Key Features
-1. Manage follow-up.
-2. Enhance User Interface.
-3. Directly accessible from the lead.
-4. Email and system notifications are set for a reminder 30 minutes before the scheduled time.
-5. Automatically update status.
-6. Easy to customize.
+1. Manage Follow-Ups of Sales Persons.
+2. Enhanced User Interface.
+3. Includes Calendar View, Gantt View, Custom Dashboard, Kanban Dashboard, and Custom Report for analytics purposes.
+4. Directly accessible for the Lead and Quotation.
+5. Email and System Notifications will be sent as a reminder 30 minutes before the scheduled time.
+6. Automatically update status.
+7. Easy to customize.
 
 
 ## Customizations
-- We can customize the Follow-up app for any DocType to have all of the features.
+- We can easily customize the Follow-up Management App for any DocType to have all of the features.
 
 
 ## Setup
 **Step-1:**
-    
-![create follow-up](https://github.com/darshitvadadoriya/follow_up_management/assets/132453297/cedc0072-9946-4175-891c-3d5d22781770)
+- Presenting the new tab named as `Follow Up` in the Lead and Quotation form.
+- To create a new follow-up, choose `Create Follow Up`. You can then update or delete follow-ups directly from the follow-up cards.
+  
+![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/456c4d77-7219-4a2a-8306-bfbb6fa158b9)
 
-- Presenting the new tab in the lead document follow-up.
-- To generate a new follow-up, choose "create follow". You can then update or delete follow-ups directly from the follow-up grid.
   
 **Step-2:**
 
