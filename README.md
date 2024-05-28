@@ -50,12 +50,21 @@ Follow-Up Management App for Frappe ERPNext – the ultimate solution for effici
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/139ad203-37ab-4dd1-bb17-4e8754382911)
 
 
-- `Calendar View` for Follow-Ups.
+- `Gantt View` for Follow-Ups.
 
-![reminder](https://github.com/darshitvadadoriya/follow_up_management/assets/132453297/414cdda0-7465-46ca-9bd2-ef873c8efd85)
+![image](https://github.com/darshitvadadoriya/follow_up_management/assets/106506791/7671a82e-98b9-4dfd-a01b-36ab7dd070cc)
 
-- Users receive reminders via system notifications and emails 30 minutes before the scheduled follow-up date and time.
-- Automatically change status Upcoming to Pending if follow-up taken is missed date-time is missed.
+
+- `Custom Report` for Follow-Ups.
+  
+![image](https://github.com/darshitvadadoriya/follow_up_management/assets/106506791/7fa0f00b-1bde-4349-9cc5-ade3899f886e)
+
+
+- `Kanban Dashboard` for Follow-Ups.
+
+![image](https://github.com/darshitvadadoriya/follow_up_management/assets/106506791/3ac05504-30b6-4fbf-bbe1-0eab81bb2516)
+
+
 
 
 
