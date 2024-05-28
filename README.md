@@ -34,32 +34,32 @@ Follow-Up Management App for Frappe ERPNext – the ultimate solution for effici
 
 ## Key Features
 
-- The Follow-Up `Card View` in the Lead and Quotation form.
+### Card View in the Lead and Quotation form
   
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/456c4d77-7219-4a2a-8306-bfbb6fa158b9)
 
   
-- Dedicated `Workspace` for Follow-Ups.
+### Dedicated Workspace for Follow-Ups.
 
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/bbef9b26-d9e4-4f2f-b104-d22ac105e700)
 
 
-- `Calendar View` for Follow-Ups.
+### Calendar View for Follow-Ups.
 
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/139ad203-37ab-4dd1-bb17-4e8754382911)
 
 
-- `Gantt View` for Follow-Ups.
+### Gantt View for Follow-Ups.
 
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/106506791/7671a82e-98b9-4dfd-a01b-36ab7dd070cc)
 
 
-- `Custom Report` for Follow-Ups.
+### Custom Report for Follow-Ups.
   
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/106506791/7fa0f00b-1bde-4349-9cc5-ade3899f886e)
 
 
-- `Kanban Dashboard` for Follow-Ups.
+### Kanban Dashboard for Follow-Ups.
 
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/106506791/3ac05504-30b6-4fbf-bbe1-0eab81bb2516)
 
