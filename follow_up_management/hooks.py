@@ -4,7 +4,7 @@ app_publisher = "Sanskar Technolab"
 app_description = "Follow-up Management"
 app_email = "darshit@sanskartechnolab.com"
 app_license = "mit"
-# required_apps = []
+required_apps = ["erpnext"]
 
 # Includes in <head>
 # ------------------
