@@ -18,7 +18,7 @@ Follow-Up Management App for Frappe ERPNext – the ultimate solution for effici
 2. Setup Default Email Account
 
 
-## Key Features
+## Specifications
 1. Manage Follow-Ups of Sales Persons.
 2. Enhanced User Interface.
 3. Includes Calendar View, Gantt View, Custom Dashboard, Kanban Dashboard, and Custom Report for analytics purposes.
@@ -32,26 +32,25 @@ Follow-Up Management App for Frappe ERPNext – the ultimate solution for effici
 - We can easily customize the Follow-up Management App for any DocType to have all of the features.
 
 
-## Setup
+## Key Features
 **Step-1:**
-- Presenting the new tab named as `Follow Up` in the Lead and Quotation form.
+- Present the new tab `Follow Up` in the Lead and Quotation form.
 - To create a new follow-up, choose `Create Follow Up`. You can then update or delete follow-ups directly from the follow-up cards.
   
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/456c4d77-7219-4a2a-8306-bfbb6fa158b9)
 
   
 **Step-2:**
+- Dedicated workspace for Follow-Ups.
 
-![update-followup](https://github.com/darshitvadadoriya/follow_up_management/assets/132453297/f893bc3f-9fb0-4571-8286-d2d34ec54f1d)
+![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/bbef9b26-d9e4-4f2f-b104-d22ac105e700)
 
-- Update a follow-up by clicking on the update button and redirecting to the follow-up form.
-- In this form, users can display follow-up details such as follow-up from, follow-up by, priority, status, communication type, follow-up datetime, and remarks.
+
 
 **Step-3:**
+- Calendar View.
 
-![delete-follow-up](https://github.com/darshitvadadoriya/follow_up_management/assets/132453297/bd5901e3-286e-486e-adbe-85efe22d555f)
-
-- Users have the option to delete the follow-up from the lead. They can do so by clicking on the delete button, which will prompt a confirmation message before deleting it.
+![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/139ad203-37ab-4dd1-bb17-4e8754382911)
 
 **Step-4**
 
