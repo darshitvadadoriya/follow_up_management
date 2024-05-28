@@ -33,26 +33,24 @@ Follow-Up Management App for Frappe ERPNext – the ultimate solution for effici
 
 
 ## Key Features
-**Step-1:**
+
 - Present the new tab `Follow Up` in the Lead and Quotation form.
 - To create a new follow-up, choose `Create Follow Up`. You can then update or delete follow-ups directly from the follow-up cards.
   
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/456c4d77-7219-4a2a-8306-bfbb6fa158b9)
 
   
-**Step-2:**
-- Dedicated workspace for Follow-Ups.
+- Dedicated `Workspace` for Follow-Ups.
 
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/bbef9b26-d9e4-4f2f-b104-d22ac105e700)
 
 
-
-**Step-3:**
-- Calendar View.
+- `Calendar View` for Follow-Ups.
 
 ![image](https://github.com/darshitvadadoriya/follow_up_management/assets/147048179/139ad203-37ab-4dd1-bb17-4e8754382911)
 
-**Step-4**
+
+- `Calendar View` for Follow-Ups.
 
 ![reminder](https://github.com/darshitvadadoriya/follow_up_management/assets/132453297/414cdda0-7465-46ca-9bd2-ef873c8efd85)
 
